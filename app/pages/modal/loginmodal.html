@@ -1,0 +1,25 @@
+
+
+
+<ion-content padding >
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Cars</ion-label>
+      <ion-select [(ngModel)]="Vehicle">
+        <ion-option *ngFor="let c of Centre" [value]="c._id" >{{c.name}}</ion-option>
+
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+<ion-footer>
+  <button full round  >
+    Book a Request
+  </button>
+  <button full  clear (click)="dismiss()" >
+  Cancel
+  </button>
+</ion-footer>
+
+</ion-content>

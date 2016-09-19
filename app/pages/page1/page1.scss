@@ -1,0 +1,34 @@
+.page1 {
+
+}
+.jumbo {
+    border: 1px solid #ccc;
+    display: inline-block;
+    height: 50px;
+    margin: 60px;
+    padding: 4px;
+}
+.jumbo .jumbo1 {
+    line-height: 50px;
+}
+
+.jumbo1 {
+    vertical-align: middle;
+}
+.spacer{
+	width: 100%;
+	height: 60%;
+}
+.scroll {
+    height: 100%;
+}
+ 
+#map {
+    width: 100%;
+    height: 100%;
+}
+.servicebox{
+        position: fixed;
+    bottom: 0;
+    width: 100%;
+}

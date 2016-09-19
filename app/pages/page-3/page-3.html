@@ -1,0 +1,47 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Page3</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+<ion-segment class="imaging">
+ <img src="https://maps.googleapis.com/maps/api/staticmap?size=850x480&zoom=17&markers=icon:http://chart.apis.google.com/chart?chst=d_map_pin_icon%26chld=cafe%257C996600%7C224+West+20th+Street+NY%7C75+9th+Ave+NY&key=AIzaSyA4rAT0fdTZLNkJ5o0uaAwZ89vVPQpr_Kc">
+  
+</ion-segment>
+<ion-segment class="quickaction">
+<ion-item class="quickaction">
+<ion-icon name="call"></ion-icon>
+Call
+</ion-item>
+<ion-item class="quickaction">
+<ion-icon name="star"></ion-icon>
+Favourite
+</ion-item>
+
+</ion-segment>
+<ion-card>
+<ion-card-header>
+  <ion-item>
+  <ion-icon name="flag" item-left></ion-icon>
+    {{c.name}}
+  </ion-item>
+</ion-card-header>
+<ion-card-content>
+  <ion-item>
+   <ion-icon name="car" item-left></ion-icon>
+   {{c.type}}
+  </ion-item>
+
+  <ion-item >
+    <ion-icon name="pin" item-left></ion-icon>
+    {{c.address}}
+  </ion-item>
+  </ion-card-content>
+  </ion-card>
+
+</ion-content>
