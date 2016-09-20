@@ -1,4 +1,12 @@
 {
+  "name": "MEAN",
+  "version": "1.0.0",
+  "description": "A MEAN app that allows users to manage contact lists",
+  "main": "app/server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app/server/server.js"
+  },
   "dependencies": {
     "@angular/common": "2.0.0-rc.4",
     "@angular/compiler": "2.0.0-rc.4",
