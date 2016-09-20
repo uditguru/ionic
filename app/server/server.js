@@ -1,7 +1,7 @@
 // Set up
 var passport = require('passport');
 var express  = require('express');
-var app      = express();                               // create our app w/ express
+
 var mongoose = require('mongoose');                     // mongoose for mongodb
 var morgan = require('morgan');             // log requests to the console (express4)
 var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
@@ -12,7 +12,7 @@ var router = require('../routes/routes');
 
 // Configuration
 mongoose.connect('mongodb://localhost/Goserv');
-
+var app      = express();
 app.use(express.static('public'));
 
 
