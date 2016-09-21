@@ -1,14 +1,14 @@
 // Set up
 var passport = require('passport');
-var express  = require('express');
-var app      = express();                               // create our app w/ express
+var app  = require('express');
+
 var mongoose = require('mongoose');                     // mongoose for mongodb
 var morgan = require('morgan');             // log requests to the console (express4)
 var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 var cors = require('cors');
 var jwt = require('jsonwebtoken');
-var router = require('../routes/routes');
+var router = require('./app/routes/routes');
 
 // Configuration
 mongoose.connect('mongodb://localhost/Goserv',function (err, res) {
@@ -30,7 +30,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 app.use(methodOverride());
 app.use(cors());
 app.use(passport.initialize());
-require('../config/passport')(passport);
+require('./app/config/passport')(passport);
 var requireAuth = passport.authenticate('local', { session: false });
 
 app.use(router);
@@ -136,5 +136,5 @@ passport.deserializeUser(function(id, done) {
         });
 
 // listen (start app with node server.js) ======================================
-app.listen(5000);
+app.listen(process.env.PORT || 5000);
 console.log("App listening on port 5000");
