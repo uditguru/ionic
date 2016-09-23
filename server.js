@@ -69,24 +69,7 @@ app.use(function(req, res, next) {
         });
 
 
-    app.post('/adduser', function(req, res) {
-    if(!req.body.name || !req.body.password) {
-    res.json({ success: false, message: 'Please enter name and password.' });
-    } else {
-    var newUser = new User({
-      name: req.body.name,
-      password: req.body.password
-    });
 
-    // Attempt to save the user
-    newUser.save(function(err) {
-      if (err) {
-        return res.json({ success: false, message: 'That name address already exists.'});
-      }
-      res.json({ success: true, message: 'Successfully created new user.' });
-        });
-      }
-    });
 
 
 
