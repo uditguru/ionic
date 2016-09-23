@@ -1,5 +1,4 @@
 // Set up
-var passport = require('passport');
 var app  = require('express');
 
 var mongoose = require('mongoose');                     // mongoose for mongodb
@@ -39,18 +38,6 @@ app.use(function(req, res, next) {
    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
    next();
-});
-
-
-
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
-});
-
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
-    done(err, user);
-  });
 });
 
     var Schema = mongoose.Schema;
