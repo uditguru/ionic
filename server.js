@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');    // pull information from HTML POST (
 
 
 // Configuration
-mongoose.connect('mongodb://localhost/Goserv',function (err, res) {
+mongoose.connect('mongodb://man:21081992@ds019746.mlab.com:19746/guru_test',function (err, res) {
       if (err) {
       console.log ('ERROR connecting to: ');
       } else {
