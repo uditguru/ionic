@@ -5,7 +5,6 @@ var mongoose = require('mongoose');                     // mongoose for mongodb
           // log requests to the console (express4)
 var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
 
-var router = require('./app/routes/routes');
 
 // Configuration
 mongoose.connect('mongodb://localhost/Goserv',function (err, res) {
@@ -27,7 +26,6 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 
 
 
-app.use(router);
 app.use(function(req, res, next) {
    res.header("Access-Control-Allow-Origin", "*");
    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
