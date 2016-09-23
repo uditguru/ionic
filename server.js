@@ -2,11 +2,9 @@
 var app  = require('express');
 
 var mongoose = require('mongoose');                     // mongoose for mongodb
-var morgan = require('morgan');             // log requests to the console (express4)
+          // log requests to the console (express4)
 var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
-var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
-var cors = require('cors');
-var jwt = require('jsonwebtoken');
+
 var router = require('./app/routes/routes');
 
 // Configuration
@@ -22,15 +20,12 @@ app.use(express.static('public'));
 
 
 
-app.use(morgan('dev'));                                         // log every request to the console
+                                    // log every request to the console
 app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
 app.use(bodyParser.json());                                     // parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
-app.use(methodOverride());
-app.use(cors());
-app.use(passport.initialize());
-require('./app/config/passport')(passport);
-var requireAuth = passport.authenticate('local', { session: false });
+
+
 
 app.use(router);
 app.use(function(req, res, next) {
