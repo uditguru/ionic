@@ -70,16 +70,6 @@ app.use(function(req, res, next) {
         });
 
 
-
-
-
-
-        app.post('/dashboard',requireAuth, function(req, res){
-             res.send({message: req.user})
-                        });
-
-
-
         app.post('/api/centre/request', function(req, res) {
 
         console.log(req.body._id);
