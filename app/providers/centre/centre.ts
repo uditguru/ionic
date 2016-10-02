@@ -15,30 +15,30 @@ export class Centre {
    static get parameters() {
         return [[Http],[NavController]];
     }
-    
+
 data : any;
 nav : any;
 isLoggedin : any;
 
   constructor(private http: Http,private navCtrl: NavController,private navParams: NavParams) {
   	this.data = null;
-      
+
         this.http = http;
         this.nav = NavController;
         this.isLoggedin = false;
   }
 
  getCentre(){
- 
+
  if (this.data) {
       return Promise.resolve(this.data);
     }
- 
+
     return new Promise(resolve => {
   let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      
-      this.http.get('http://localhost:8080/api/centre')
+
+      this.http.get('https://vast-woodland-85427.herokuapp.com/api/centre')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -47,16 +47,16 @@ isLoggedin : any;
     });
   }
    getUser(){
- 
+
  if (this.data) {
       return Promise.resolve(this.data);
     }
- 
+
     return new Promise(resolve => {
   let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      
-      this.http.get('http://localhost:8080/api/user')
+
+      this.http.get('https://vast-woodland-85427.herokuapp.com/api/user')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -64,65 +64,64 @@ isLoggedin : any;
         });
     });
   }
- 
+
   requestCentre(data){
- 
+
     return new Promise(resolve => {
- 
+
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
- 
-      this.http.post('http://localhost:8080/api/centre/request', JSON.stringify(data), {headers: headers})
+
+      this.http.post('https://vast-woodland-85427.herokuapp.com/api/centre/request', JSON.stringify(data), {headers: headers})
         .subscribe((data) => {
           resolve(data);
         });
- 
+
     });
- 
+
   }
 
    userLogin(user) {
         var headers = new Headers();
         var creds = "name=" + user.name + "&password=" + user.password;
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        
+
         return new Promise(resolve => {
-        
-            this.http.post('http://localhost:8080/authenticate', creds, {headers: headers}).subscribe(data => {
-            
+
+            this.http.post('https://vast-woodland-85427.herokuapp.com/authenticate', creds, {headers: headers}).subscribe(data => {
+
             if(data.json().success){
                 window.localStorage.setItem('dashboard', data.json().token);
-            this.isLoggedin = true; }   
+            this.isLoggedin = true; }
             resolve(this.isLoggedin);
-                
-        }); 
-            
+
         });
-        
-        
+
+        });
+
+
     }
     register(user) {
-        
+
         return new Promise(resolve => {
         var creds = "name=" + user.name + "&password=" + user.password;
-      
+
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        this.http.post('http://localhost:8080/adduser', creds, {headers: headers}).subscribe(data => {
+        this.http.post('https://vast-woodland-85427.herokuapp.com/adduser', creds, {headers: headers}).subscribe(data => {
            if(data.json().success)
                resolve(true);
             else
                 resolve(false);
-    
-        });    
+
         });
-        
+        });
+
     }
-    
+
     logout() {
         this.isLoggedin = false;
         window.localStorage.clear();
     }
 
 }
-

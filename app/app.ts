@@ -9,11 +9,17 @@ import {LoginPage} from './pages/login/login';
 import {SignupPage} from './pages/signup/signup';
 import {ProfilePage} from './pages/profile/profile';
 import {LoginModal} from './pages/modal/loginmodal';
+import {Optionsuno} from './pages/optionsuno/optionsuno';
+
 import {Centre} from './providers/centre/centre';
 import {Http} from '@angular/http';
 import {AuthHttp, AuthConfig} from 'angular2-jwt';
 import {AuthService} from './services/auth/auth';
 
+ionicBootstrap({
+  menuType: 'overlay',
+
+});
 @Component({
   templateUrl: 'build/app.html',
 
@@ -34,7 +40,7 @@ class MyApp {
       { title: 'Test', component: Page2 },
       { title: 'Profile', component: ProfilePage },
       { title: 'Login', component: LoginPage },
-      { title: 'Signup', component: SignupPage }
+     
     ];
     this.auth.startupTokenRefresh();
         });

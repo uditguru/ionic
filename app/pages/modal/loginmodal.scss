@@ -1,14 +1,33 @@
-ion-modal {
+.serviceTool {
     position: relative;
-    top: 60%;
+    top: 70%;
     left: 0;
     display: block;
     width: 100%;
-    min-height: 30%;
-    max-height: 40%;
+    min-height: 20%;
+    max-height: 30%;
     bottom: 1px;
-    background-color: transparent;
+    background-color: white;
+    z-index: 100;
 }
 ion-select{
-  width: 90%;
+  width: 90;
+  position : fixed;
+  z-index: 1000;
+}
+.buttonReq{
+  width: 100%;
+}
+.cardOptions{
+  padding: 1vh;
+ width: 100%;
+}
+.flexGrid >ion-row{
+  flex-wrap: wrap;
+  padding: 0;
+}
+.flexGrid >ion-row >ion-col{
+  
+  padding: 0;
+
 }

@@ -9,24 +9,28 @@
 
 <ion-content>
 
+  <ion-slides class="servicebox">
+    <ion-slide  *ngFor="let c of Centre ">
+      <ion-card (click)="detail(c)" >
 
-<ion-card (click)="detail(c)" *ngFor="let c of Centre ">
- <img class="image" src="https://maps.googleapis.com/maps/api/staticmap?size=850x480&zoom=17&markers=icon:http://chart.apis.google.com/chart?chst=d_map_pin_icon%26chld=cafe%257C996600%7C224+West+20th+Street+NY%7C75+9th+Ave+NY&key=AIzaSyA4rAT0fdTZLNkJ5o0uaAwZ89vVPQpr_Kc">
 
+        <ion-item>
+          {{c.name}}
+        </ion-item>
 
-  <ion-item>
-    {{c.name}}
-  </ion-item>
+        <ion-item>
+         {{c.type}}
+        </ion-item>
 
-  <ion-item>
-   {{c.type}}
-  </ion-item>
+        <ion-item>
+          <p>{{c.address}}</p>
+        </ion-item>
 
-  <ion-item>
-    <p>{{c.address}}</p>
-  </ion-item>
+      </ion-card>
+    </ion-slide>
 
-</ion-card>
+  </ion-slides>
+
 
 
 </ion-content>

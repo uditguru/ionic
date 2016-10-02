@@ -8,28 +8,36 @@
 </ion-header>
 
 
-<ion-content>
-  <div #map id="map"></div>
-  <ion-list class="servicebox">
-    <button ion-item (click)="findCentre(Page2)" >
-      <ion-icon name="hand" item-left></ion-icon>
-      Road Support
+<ion-content class="home">
+  <div #map id="map">
+    <ion-list class="servicebox1">
 
-    </button>
-     <button ion-item (click)="presentContactModal()">
-      <ion-icon name="construct" item-left></ion-icon>
-      Service and Repairs
-      <div class="item-note" item-right>
 
-      </div>
-    </button>
-     <button ion-item>
-      <ion-icon name="car" item-left></ion-icon>
-      Car Wash
-      <div class="item-note" item-right>
+      <ion-searchbar class=addinput type="text" [(ngModel)]="data" [value]="data" clearInput></ion-searchbar>
 
-      </div>
-    </button>
-  </ion-list>
+    </ion-list>
+
+
+    <ion-list class="servicebox">
+      <div class="sbchild">
+      <button ion-item (click)="findCentre(Page2)" >
+        <ion-icon name="hand" item-left></ion-icon>
+        Road Support
+
+      </button>
+       <button ion-item (click)="presentContactModal()">
+        <ion-icon name="construct" item-left></ion-icon>
+        Service and Repairs
+
+      </button>
+       <button ion-item>
+        <ion-icon name="car" (click)="test()" item-left></ion-icon>
+        Car Wash
+
+      </button>
+    </div>
+    </ion-list>
+  </div>
+
 
 </ion-content>

@@ -1,25 +1,39 @@
 
 
 
-<ion-content padding >
+<ion-content padding class="serviceTool" >
+  <ion-grid class="flexGrid">
+    <ion-row>
+      <ion-col width-50>
+        <ion-card (click)="openselect()" class="cardOptions"><ion-icon name="car"><span></span></ion-icon>Select</ion-card>
+      </ion-col>
+      <ion-col width-50>
+        <ion-card (click)="openselect()" class="cardOptions"><ion-icon name="card"><span></span></ion-icon>Select</ion-card>
+      </ion-col>
+      <ion-col width-50>
+        <ion-card (click)="openselect()" class="cardOptions"><ion-icon name="car"><span></span></ion-icon>Select</ion-card>
+      </ion-col>
+      <ion-col width-50>
+        <ion-card (click)="openselect()" class="cardOptions"><ion-icon name="card"><span></span></ion-icon>Select</ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <ion-list>
-    <ion-item>
-      <ion-label>Cars</ion-label>
-      <ion-select [(ngModel)]="Vehicle">
-        <ion-option *ngFor="let c of Centre" [value]="c._id" >{{c.name}}</ion-option>
-
-      </ion-select>
-    </ion-item>
-  </ion-list>
 
 <ion-footer>
-  <button full round  >
-    Book a Request
-  </button>
-  <button full  clear (click)="dismiss()" >
-  Cancel
-  </button>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-50>
+
+        <button small class="buttonReq">Request MechCar</button>
+
+      </ion-col>
+      <ion-col width-50>
+        <button  small outline (click)=dismiss() class="buttonReq">Cancel</button>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-footer>
 
 </ion-content>

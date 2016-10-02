@@ -29,3 +29,17 @@
 // App iOS Only Sass
 // --------------------------------------------------
 // CSS that should only apply to the iOS app
+ion-menu[type=overlay] {
+    z-index: 80;
+}
+ion-menu.show-menu {
+    display: block;
+}
+ion-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
