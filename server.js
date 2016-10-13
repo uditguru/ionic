@@ -44,6 +44,16 @@ app.use(function(req, res, next) {
         servicecost: String
 
     }, { collection: 'Goserv' });
+  
+
+          var schemaLoc = new Schema({
+
+        type: String,
+        address: String,
+
+        servicecost: String
+
+    }, { collection: 'location' });
 
 
 
