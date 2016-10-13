@@ -70,6 +70,27 @@ app.use(function(req, res, next) {
         });
 
 
+    var location = mongoose.model('location', schema  );
+
+     module.exports = location ;
+
+
+        app.get('/api/locate', function(req, res) {
+
+
+            location.find({},function(err, points){
+                if(err){
+                    res.send(err);
+               } else {
+                    res.json(points);
+                    console.log(points);
+               }
+
+            });
+
+        });
+
+
         app.post('/api/centre/request', function(req, res) {
 
         console.log(req.body._id);
