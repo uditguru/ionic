@@ -80,7 +80,7 @@ app.use(function(req, res, next) {
         });
 
 
-    var location = mongoose.model('location', schema  );
+    var location = mongoose.model('location', schemaLoc  );
 
      module.exports = location ;
 
